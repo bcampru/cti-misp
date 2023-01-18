@@ -1,0 +1,8 @@
+.env
+data/db
+data/web
+proxy/ssl/misp.crt
+proxy/ssl/misp.key
+**/node_modules
+**/__pycache__
+**/.vscode
