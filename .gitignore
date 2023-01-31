@@ -1,6 +1,7 @@
 .env
 data/db
 data/web
+data/ioc-manager
 proxy/ssl/misp.crt
 proxy/ssl/misp.key
 **/node_modules

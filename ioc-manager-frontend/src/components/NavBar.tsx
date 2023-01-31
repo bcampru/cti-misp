@@ -25,7 +25,6 @@ function NavBar() {
           <Nav className="me-auto">
             <Nav.Link href="add">Add IOC</Nav.Link>
             <Nav.Link href="delete">Delete IOC</Nav.Link>
-            <Nav.Link href="update">Update IOC</Nav.Link>
             <Nav.Link href="logger">MISP Logger</Nav.Link>
           </Nav>
 

@@ -12,7 +12,6 @@ import {
 } from 'react-bootstrap'
 import { useState, useEffect } from 'react'
 import service_deleteIocs from '../services/core/deleteIocs'
-import service_getClients from '../services/core/getClients'
 
 function DeleteIoc() {
   const [isShown, setIsShown] = useState(false)
@@ -21,16 +20,6 @@ function DeleteIoc() {
   const [file, setFile] = useState<File>()
   const [error, setError] = useState<string>()
   const [progress, setProgress] = useState<number>(0)
-  const [clients, setClients] = useState<any>({})
-
-  useEffect(
-    () =>
-      service_getClients((result: Error | Array<any>) => {
-        if (result instanceof Error) setError(result.message)
-        else setClients(result.reduce((a, v) => ({ ...a, [v]: false }), {}))
-      }),
-    []
-  )
 
   const onToggleHandler = (isOpen: boolean, metadata: any) => {
     if (metadata.source !== 'select') {
@@ -53,33 +42,13 @@ function DeleteIoc() {
     e.preventDefault()
     setError('')
     setProgress(0)
-    if (file) service_deleteIocs(file, undefined, clients, setState)
+    if (file) service_deleteIocs(file, undefined, setState)
   }
   const sendIocs = (e: any) => {
     e.preventDefault()
     setError('')
     setProgress(0)
-    if (iocs !== '') service_deleteIocs(undefined, iocs, clients, setState)
-  }
-  const getClients = () => {
-    var res: Array<any> = []
-    Object.keys(clients).forEach((key) =>
-      res.push(
-        <Dropdown.Item href="#action/3.2">
-          <Form.Check
-            key={key}
-            type="checkbox"
-            id="default-checkbox"
-            defaultChecked={clients[key]}
-            label={key}
-            onClick={(e: any) =>
-              setClients({ ...clients, [key]: e.target.checked })
-            }
-          />
-        </Dropdown.Item>
-      )
-    )
-    return res
+    if (iocs !== '') service_deleteIocs(undefined, iocs, setState)
   }
   return (
     <>
@@ -101,17 +70,6 @@ function DeleteIoc() {
             {progress !== 0 && <ProgressBar animated now={progress} />}
           </div>
           <ButtonGroup className="mb-3">
-            <DropdownButton
-              title="Select Clients"
-              as={ButtonGroup}
-              variant="outline-secondary"
-              show={isShown}
-              onToggle={(isOpen: boolean, metadata: any) =>
-                onToggleHandler(isOpen, metadata)
-              }
-            >
-              {getClients()}
-            </DropdownButton>
             <Button variant="outline-success" type="submit" onClick={sendIocs}>
               Delete IOCs
             </Button>
@@ -129,17 +87,6 @@ function DeleteIoc() {
               type="file"
               onChange={(e: any) => setFile(e.target.files[0])}
             />
-            <DropdownButton
-              title="Select Clients"
-              align="end"
-              variant="outline-secondary"
-              show={isShown2}
-              onToggle={(isOpen: boolean, metadata: any) =>
-                onToggleHandler2(isOpen, metadata)
-              }
-            >
-              {getClients()}
-            </DropdownButton>
           </InputGroup>
           <div className="mb-3">
             {progress !== 0 && <ProgressBar animated now={progress} />}

@@ -9,40 +9,9 @@ import os
 db = SQLAlchemy()
 jwt = JWTManager()
 
-
-def initTemplates(app):
-    @app.route("/iocLogger", methods=['GET'])
-    def logger():
-        return render_template('iocLogger.html')
-
-    @app.route("/tableVisualizer", methods=['GET'])
-    def tableVisualizer():
-        return render_template('tableVisualizer.html')
-
-    @app.route("/addIocTemplate")
-    def create():
-        return render_template('createIoc.html')
-
-    @app.route("/deleteIocTemplate")
-    def delete():
-        return render_template('deleteIoc.html')
-
-    @app.route("/updateIocTemplate")
-    def update():
-        return render_template('updateIoc.html')
-
-    @app.route("/")
-    def main():
-        os.chdir(app.root_path)
-        return render_template('index.html', var=os.getenv("logo"))
-
-
 def create_app(config_class=Config):
     app = Flask(__name__)
     app.config.from_object(config_class)
-
-    # TODO remove templates when frontend is in prod
-    initTemplates(app)
     CORS(app, supports_credentials=True)
     db.init_app(app)
     jwt.init_app(app)

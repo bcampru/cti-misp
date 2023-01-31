@@ -12,7 +12,6 @@ import {
 } from 'react-bootstrap'
 import { useState, useEffect } from 'react'
 import service_sendIocs from '../services/core/sendIocs'
-import service_getClients from '../services/core/getClients'
 
 function AddIoc() {
   const [isShown, setIsShown] = useState(false)
@@ -21,18 +20,8 @@ function AddIoc() {
   const [file, setFile] = useState<File>()
   const [error, setError] = useState<string>()
   const [progress, setProgress] = useState<number>(0)
-  const [clients, setClients] = useState<any>({})
   const [expiration, setExpiration] = useState<number>()
   const [expirationUnit, setExpirationUnit] = useState<string>('Automatic')
-
-  useEffect(
-    () =>
-      service_getClients((result: Error | Array<any>) => {
-        if (result instanceof Error) setError(result.message)
-        else setClients(result.reduce((a, v) => ({ ...a, [v]: false }), {}))
-      }),
-    []
-  )
 
   const onToggleHandler = (isOpen: boolean, metadata: any) => {
     if (metadata.source !== 'select') {
@@ -55,7 +44,7 @@ function AddIoc() {
     e.preventDefault()
     setError('')
     setProgress(0)
-    if (file) service_sendIocs(file, undefined, clients, '', setState)
+    if (file) service_sendIocs(file, undefined, '', setState)
   }
   const sendIocs = (e: any) => {
     e.preventDefault()
@@ -72,32 +61,14 @@ function AddIoc() {
     }
     setError('')
     setProgress(0)
-    if (iocs !== '') service_sendIocs(undefined, iocs, clients, exp, setState)
+    if (iocs !== '') service_sendIocs(undefined, iocs, exp, setState)
   }
-  const getClients = () => {
-    var res: Array<any> = []
-    Object.keys(clients).forEach((key) =>
-      res.push(
-        <Dropdown.Item href="#action/3.2">
-          <Form.Check
-            key={key}
-            type="checkbox"
-            id="default-checkbox"
-            defaultChecked={clients[key]}
-            label={key}
-            onClick={(e: any) =>
-              setClients({ ...clients, [key]: e.target.checked })
-            }
-          />
-        </Dropdown.Item>
-      )
-    )
-    return res
-  }
+
   return (
     <>
       <h1>Add IOC</h1>
       <br />
+      {console.log(process.env)}
       {error ? <Alert variant="danger"> {error} </Alert> : ''}
       <Tabs defaultActiveKey="Form" className="mb-3" fill>
         <Tab eventKey="Form" title="Form">
@@ -160,17 +131,6 @@ function AddIoc() {
             ) : (
               ''
             )}
-            <DropdownButton
-              title="Select Clients"
-              as={ButtonGroup}
-              variant="outline-secondary"
-              show={isShown}
-              onToggle={(isOpen: boolean, metadata: any) =>
-                onToggleHandler(isOpen, metadata)
-              }
-            >
-              {getClients()}
-            </DropdownButton>
             <Button variant="outline-success" type="submit" onClick={sendIocs}>
               Upload IOCs
             </Button>
@@ -185,17 +145,6 @@ function AddIoc() {
               type="file"
               onChange={(e: any) => setFile(e.target.files[0])}
             />
-            <DropdownButton
-              title="Select Clients"
-              align="end"
-              variant="outline-secondary"
-              show={isShown2}
-              onToggle={(isOpen: boolean, metadata: any) =>
-                onToggleHandler2(isOpen, metadata)
-              }
-            >
-              {getClients()}
-            </DropdownButton>
           </InputGroup>
           <div className="mb-3">
             {progress ? <ProgressBar animated now={progress} /> : ''}

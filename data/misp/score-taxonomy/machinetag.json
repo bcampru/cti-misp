@@ -1,0 +1,922 @@
+{
+    "namespace": "score",
+    "description": "Score taxonomy for filtering",
+    "version": 1,
+    "predicates": [
+        {
+            "value": "value",
+            "expanded": "Calculated score"
+        }
+    ],
+    "values": [
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "0",
+                    "numerical_value": 0
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "1",
+                    "numerical_value": 1
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "2",
+                    "numerical_value": 2
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "3",
+                    "numerical_value": 3
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "4",
+                    "numerical_value": 4
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "5",
+                    "numerical_value": 5
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "6",
+                    "numerical_value": 6
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "7",
+                    "numerical_value": 7
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "8",
+                    "numerical_value": 8
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "9",
+                    "numerical_value": 9
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "10",
+                    "numerical_value": 10
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "11",
+                    "numerical_value": 11
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "12",
+                    "numerical_value": 12
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "13",
+                    "numerical_value": 13
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "14",
+                    "numerical_value": 14
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "15",
+                    "numerical_value": 15
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "16",
+                    "numerical_value": 16
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "17",
+                    "numerical_value": 17
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "18",
+                    "numerical_value": 18
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "19",
+                    "numerical_value": 19
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "20",
+                    "numerical_value": 20
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "21",
+                    "numerical_value": 21
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "22",
+                    "numerical_value": 22
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "23",
+                    "numerical_value": 23
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "24",
+                    "numerical_value": 24
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "25",
+                    "numerical_value": 25
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "26",
+                    "numerical_value": 26
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "27",
+                    "numerical_value": 27
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "28",
+                    "numerical_value": 28
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "29",
+                    "numerical_value": 29
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "30",
+                    "numerical_value": 30
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "31",
+                    "numerical_value": 31
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "32",
+                    "numerical_value": 32
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "33",
+                    "numerical_value": 33
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "34",
+                    "numerical_value": 34
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "35",
+                    "numerical_value": 35
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "36",
+                    "numerical_value": 36
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "37",
+                    "numerical_value": 37
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "38",
+                    "numerical_value": 38
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "39",
+                    "numerical_value": 39
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "40",
+                    "numerical_value": 40
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "41",
+                    "numerical_value": 41
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "42",
+                    "numerical_value": 42
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "43",
+                    "numerical_value": 43
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "44",
+                    "numerical_value": 44
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "45",
+                    "numerical_value": 45
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "46",
+                    "numerical_value": 46
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "47",
+                    "numerical_value": 47
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "48",
+                    "numerical_value": 48
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "49",
+                    "numerical_value": 49
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "50",
+                    "numerical_value": 50
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "51",
+                    "numerical_value": 51
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "52",
+                    "numerical_value": 52
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "53",
+                    "numerical_value": 53
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "54",
+                    "numerical_value": 54
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "55",
+                    "numerical_value": 55
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "56",
+                    "numerical_value": 56
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "57",
+                    "numerical_value": 57
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "58",
+                    "numerical_value": 58
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "59",
+                    "numerical_value": 59
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "60",
+                    "numerical_value": 60
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "61",
+                    "numerical_value": 61
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "62",
+                    "numerical_value": 62
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "63",
+                    "numerical_value": 63
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "64",
+                    "numerical_value": 64
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "65",
+                    "numerical_value": 65
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "66",
+                    "numerical_value": 66
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "67",
+                    "numerical_value": 67
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "68",
+                    "numerical_value": 68
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "69",
+                    "numerical_value": 69
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "70",
+                    "numerical_value": 70
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "71",
+                    "numerical_value": 71
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "72",
+                    "numerical_value": 72
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "73",
+                    "numerical_value": 73
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "74",
+                    "numerical_value": 74
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "75",
+                    "numerical_value": 75
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "76",
+                    "numerical_value": 76
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "77",
+                    "numerical_value": 77
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "78",
+                    "numerical_value": 78
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "79",
+                    "numerical_value": 79
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "80",
+                    "numerical_value": 80
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "81",
+                    "numerical_value": 81
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "82",
+                    "numerical_value": 82
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "83",
+                    "numerical_value": 83
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "84",
+                    "numerical_value": 84
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "85",
+                    "numerical_value": 85
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "86",
+                    "numerical_value": 86
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "87",
+                    "numerical_value": 87
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "88",
+                    "numerical_value": 88
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "89",
+                    "numerical_value": 89
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "90",
+                    "numerical_value": 90
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "91",
+                    "numerical_value": 91
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "92",
+                    "numerical_value": 92
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "93",
+                    "numerical_value": 93
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "94",
+                    "numerical_value": 94
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "95",
+                    "numerical_value": 95
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "96",
+                    "numerical_value": 96
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "97",
+                    "numerical_value": 97
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "98",
+                    "numerical_value": 98
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "99",
+                    "numerical_value": 99
+                }
+            ]
+        },
+        {
+            "predicate": "value",
+            "entry": [
+                {
+                    "value": "100",
+                    "numerical_value": 100
+                }
+            ]
+        }
+    ]
+}

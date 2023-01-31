@@ -4,7 +4,6 @@ import service_logout from '../auth/logout'
 export default function service_deleteIocs(
   file: File | undefined,
   iocs: string | undefined,
-  clients: any,
   callback: Function
 ) {
   const endpoint: string = '/delete'
@@ -61,11 +60,6 @@ export default function service_deleteIocs(
     callback('You need to provide either a file or a text with IOCs', 0)
     return
   }
-
-  formData.append(
-    'clients',
-    JSON.stringify(Object.keys(clients).find((key) => clients[key] === true))
-  )
 
   if (!process.env.REACT_APP_API_URL)
     return callback(new Error("API isn't specified"))

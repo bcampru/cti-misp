@@ -54,7 +54,7 @@ class AbuseIPDB:
             data = r.json()
             data = data["data"]
             if data["isWhitelisted"]:
-                callback(ip, 0)
+                callback(ip, 0, self._SOURCE_NAME)
                 return
             if len(data["reports"]) > 0:
                 found = []

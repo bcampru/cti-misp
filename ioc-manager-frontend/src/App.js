@@ -4,14 +4,17 @@ import Home from './pages/Home'
 import NoPage from './pages/NoPage'
 import AddIoc from './pages/AddIoc'
 import Auth from './pages/Auth'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { AuthContext } from './context/Auth.context'
 import DeleteIoc from './pages/DeleteIoc'
-import UpdateIoc from './pages/UpdateIoc'
 import IocLogger from './pages/IocLogger'
+import service_validcookie from './services/auth/validcookie'
 
 export default function App() {
-  const { state } = useContext(AuthContext)
+  const { state, logout } = useContext(AuthContext)
+  useEffect(() => {
+    service_validcookie(logout)
+  }, [])
   if (!state.isLoggedIn) return <Auth />
   else
     return (
@@ -21,7 +24,6 @@ export default function App() {
             <Route index element={<Home />} />
             <Route path="/add" element={<AddIoc />} />
             <Route path="/delete" element={<DeleteIoc />} />
-            <Route path="/update" element={<UpdateIoc />} />
             <Route path="/logger" element={<IocLogger />} />
             <Route path="*" element={<NoPage />} />
           </Route>

@@ -106,7 +106,7 @@ export default function Auth() {
                         </Form.Group>
                         <div className="d-grid">
                           <Button variant="primary" type="submit">
-                            <Row class="row">
+                            <Row className="row">
                               {isLoginPending && (
                                 <Col>
                                   <Spinner
@@ -268,7 +268,7 @@ export default function Auth() {
                         </Form.Group>
                         <div className="d-grid">
                           <Button variant="primary" type="submit">
-                            <Row class="row">
+                            <Row className="row">
                               {isLoginPending && (
                                 <Col>
                                   <Spinner

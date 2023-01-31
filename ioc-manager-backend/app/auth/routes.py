@@ -56,7 +56,7 @@ def register():
 @jwt_required()
 def current_user():
     uid = get_jwt_identity()
-    return jsonify(get_user(uid))
+    return jsonify({"uid":uid})
 
 
 @bp.route("/logout", methods=["POST"])

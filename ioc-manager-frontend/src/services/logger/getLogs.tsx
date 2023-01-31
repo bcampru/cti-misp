@@ -1,7 +1,7 @@
-import { getToken, setToken } from '../../helpers/token'
+import { getToken } from '../../helpers/token'
 
-export default function service_getLogs(type: string, callback: Function) {
-  const endpoint: string = '/iocLogger/' + type
+export default function service_getLogs(callback: Function) {
+  const endpoint: string = '/iocLogger/misp'
   const options: RequestInit = {
     method: 'GET',
     headers: {

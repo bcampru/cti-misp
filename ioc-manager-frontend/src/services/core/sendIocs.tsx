@@ -4,7 +4,6 @@ import service_logout from '../auth/logout'
 export default function service_sendIocs(
   file: File | undefined,
   iocs: string | undefined,
-  clients: any,
   expiration: any,
   callback: Function
 ) {
@@ -63,12 +62,6 @@ export default function service_sendIocs(
     return
   }
 
-  let cl: Array<string> = []
-  Object.keys(clients).forEach((key) => {
-    if (clients[key] === true) cl.push(key)
-  })
-
-  formData.append('clients', JSON.stringify(cl))
   formData.append('expiration', expiration)
 
   if (!process.env.REACT_APP_API_URL)

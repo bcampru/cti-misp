@@ -14,8 +14,7 @@ services:
     hostname: ${MISP_HOST:-misp_web}
     volumes:
       - /dev/urandom:/dev/random
-      - ${DATA_DIR:-./data}/web:/var/www/MISP
-      - ${DATA_DIR:-./data}/score-taxonomy:/var/www/MISP/app/files/taxonomies/score-taxonomy
+      - ${DATA_DIR:-./data}/misp/score-taxonomy:/var/www/MISP/app/files/taxonomies/score-taxonomy
     environment:
       - MYSQL_HOST=${MYSQL_HOST:-misp_db}
       - MYSQL_DATABASE=${MYSQL_DATABASE:-misp}
@@ -58,15 +57,46 @@ services:
     build:
       context: score
       dockerfile: Dockerfile
-    restart: unless-stopped
+    restart: "no"
     environment:
       - MISP_API_KEY=${MISP_API_KEY}
       - ABUSEIPDB_API_KEY=${ABUSEIPDB_API_KEY}
       - VIRUSTOTAL_API_KEY=${VIRUSTOTAL_API_KEY}
       - MISP_HOST=${MISP_HOST:-misp_web}
-    
-    #TODO ficar environment vars
+      - SCORE_TOL=${SCORE_TOL:-100d}
+
+  ioc-manager-frontend:
+    build:
+      context: ioc-manager-frontend
+      dockerfile: Dockerfile
+      args:
+        - REACT_APP_API_URL=${REACT_APP_API_URL:-http://127.0.0.1:5000/api}
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+
+  ioc-manager-backend:
+    build:
+      context: ioc-manager-backend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - 5000:5000
+    user: root
+    environment:
+      - MISP_API_KEY=${MISP_API_KEY}
+      - MISP_HOST=${MISP_HOST:-misp_web}
+    volumes:
+      - ${DATA_DIR:-./data}/ioc-manager:/app/app/data
+
+  misp-microsoft-graph:
+    build:
+      context: misp-microsoft-graph
+      dockerfile: Dockerfile
+    restart: unless-stopped
+  
 
 volumes:
-  web:
   db:
+  ioc-manager:
+  misp:

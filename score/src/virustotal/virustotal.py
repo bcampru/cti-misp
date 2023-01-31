@@ -44,6 +44,7 @@ class VirusTotalConnector:
                 return 0
             if json_data["error"]["code"]=="QuotaExceededError":
                 return -1
+            print(observable["value"])
             raise ValueError(json_data["error"]["message"])
         if "data" not in json_data or "attributes" not in json_data["data"]:
             raise ValueError("An error has occurred.")
@@ -73,10 +74,13 @@ class VirusTotalConnector:
         json_data = self.client.get_ip_info(observable["value"])
         assert json_data
         if "error" in json_data:
+            print(json_data["error"]["message"])
             if json_data["error"]["code"]=='NotFoundError':
                 return 0
             if json_data["error"]["code"]=="QuotaExceededError":
                 return -1
+            print(observable["value"])
+            raise ValueError(json_data["error"]["message"])
         if "data" not in json_data or "attributes" not in json_data["data"]:
             raise ValueError("An error has occurred.")
 
@@ -87,16 +91,20 @@ class VirusTotalConnector:
         #es podria extreure info de asn i de localització si es volgues. Està guardat a json_data
 
         #notes=builder.create_notes() #Dades de VT, per si es vol utilitzar
+        print("va")
         return builder.score
 
     def _process_domain(self, observable):
         json_data = self.client.get_domain_info(observable["value"])
         assert json_data
         if "error" in json_data:
+            print(json_data["error"]["message"])
             if json_data["error"]["code"]=='NotFoundError':
                 return 0
             if json_data["error"]["code"]=="QuotaExceededError":
                 return -1
+            print(observable["value"])
+            raise ValueError(json_data["error"]["message"])
         if "data" not in json_data or "attributes" not in json_data["data"]:
             raise ValueError("An error has occurred.")
 
@@ -116,16 +124,20 @@ class VirusTotalConnector:
         
         #notes=builder.create_notes() #Dades de VT, per si es vol utilitzar
 
+        print("va")
         return builder.score
 
     def _process_url(self, observable):
         json_data = self.client.get_url_info(observable["value"])
         assert json_data
         if "error" in json_data:
+            print(json_data["error"]["message"])
             if json_data["error"]["code"]=='NotFoundError':
                 return 0
             if json_data["error"]["code"]=="QuotaExceededError":
                 return -1
+            print(observable["value"])
+            raise ValueError(json_data["error"]["message"])
         if "data" not in json_data or "attributes" not in json_data["data"]:
             raise ValueError("An error has occurred.")
 
@@ -133,6 +145,7 @@ class VirusTotalConnector:
             json_data["data"]
         )
         #notes=builder.create_notes() #Dades de VT, per si es vol utilitzar
+        print("va")
         return builder.score
 
     def _process_message(self, observable, callback):
