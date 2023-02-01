@@ -1,12 +1,9 @@
 import json
-from tokenize import Number
 from pymisp import MISPAttribute
 from misp_instance import misp_instance
 import concurrent.futures
 from virustotal import VirusTotalConnector
 from abuseipdb import AbuseIPDB
-from datetime import date
-from dateutil.relativedelta import relativedelta
 import os
 
 key = os.getenv("MISP_API_KEY")
@@ -14,9 +11,10 @@ misp_host = os.getenv("MISP_HOST")
 misp = misp_instance("http://localhost", "vANwHwHW4DI5k1BfbNe8oVsmUuJTlBDcg3K9mdT4")
 # misp=misp_instance("http://"+misp_host, key)
 attributes = misp.getFilteredAttributes()
+misp.cleanIdsAttributes()
 aipdb = AbuseIPDB()
 vtconnector = VirusTotalConnector()
-threshold = os.getenv("SCORE_THRESHOLD")
+thresholds = misp.getThresholds()
 
 types = {"ip": ["ip-src", "ip-dst"], "vt": ["sha256", "md5", "sha1", "url", "domain"]}
 
@@ -43,17 +41,21 @@ class done:
             self.cancel[connector] = 1
             self.removeJobs()
             return
-        if score < int(threshold):
+        if score < thresholds[attr["type"]]:
             self.misp_instance.delete(attr)
         else:
             tag = [a for a in misp.taxonomy if a["numerical_value"] == str(score)][0]
             a = MISPAttribute()
+            attr["to_ids"] = True
             a.from_dict(Attribute=attr)
             a.add_tag(tag["tag"])
             self.attributes.append(a)
 
     def push(self):
+        print("Saving enriched IOCs")
         misp.push(self.attributes)
+        print("Updating Scores")
+        misp.updateScores()
         return self.attributes
 
 
@@ -63,7 +65,7 @@ with concurrent.futures.ThreadPoolExecutor(
     try:
         done_instance = done(misp)
         ip, ipmanager, vt, vtmanager = [], [], [], []
-        for a in attributes["Attribute"]:
+        for a in attributes:
             if a["type"] in types["ip"] and a["Event"]["info"] != "IOC Manager":
                 ip.append(a)
             elif a["type"] in types["vt"] and a["Event"]["info"] != "IOC Manager":

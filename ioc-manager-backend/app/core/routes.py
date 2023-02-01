@@ -1,4 +1,3 @@
-from time import sleep
 from flask_jwt_extended import jwt_required, get_jwt_identity
 
 from app.core import bp, misp
@@ -185,13 +184,13 @@ def elimina():
             return Response('{"error": "You need to provide a file!"}\n')
 
 
-@bp.route("/getExcel", methods=["GET", "POST"])
+@bp.route("/getExcel", methods=["GET"])
 def download_excel():
     path = current_app.root_path + "//data//resultat.xlsx"
     return send_file(path, as_attachment=True)
 
 
-@bp.route("/getText", methods=["GET", "POST"])
+@bp.route("/getText", methods=["GET"])
 def download_text():
     path = current_app.root_path + "//data//resultat_hash.txt"
     return send_file(path, as_attachment=True)

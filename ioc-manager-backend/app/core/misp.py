@@ -129,3 +129,10 @@ class misp_instance:
                 json={"Attribute": delete[o]},
                 headers=headers,
             )
+
+    def getIocs(self, types):
+        return self.instance.search(
+            controller="attributes",
+            to_ids=True,
+            type_attribute=types,
+        )["Attribute"]

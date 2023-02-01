@@ -1,7 +1,7 @@
 <?php
 include_once 'Base.php';
 
-class Polynomial extends DecayingModelBase
+class Cyberproof extends DecayingModelBase
 {
     function __construct() {
         $this->Attribute = ClassRegistry::init("Attribute");
@@ -51,6 +51,6 @@ class Polynomial extends DecayingModelBase
 				true
 			);
 		}
-		return $threshold > $score;
+		return $decayed;
     }
 }
