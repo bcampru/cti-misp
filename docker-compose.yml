@@ -14,7 +14,6 @@ services:
     hostname: ${MISP_HOST:-misp_web}
     volumes:
       - /dev/urandom:/dev/random
-      - ${DATA_DIR:-./data}/web:/var/www/MISP
       - ${DATA_DIR:-./data}/misp/score-taxonomy:/var/www/MISP/app/files/taxonomies/score-taxonomy
       - ${DATA_DIR:-./data}/misp/DecayingModelsFormulas:/var/www/MISP/app/Model/DecayingModelsFormulas
     environment:
@@ -41,19 +40,6 @@ services:
       - MYSQL_USER=${MYSQL_USER:-misp}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD:-misp}
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD:-misp}
-  
-  feed-server:
-    build:
-      context: feed-server
-      dockerfile: Dockerfile
-    restart: unless-stopped
-    ports:
-      - "8080:8080"
-    environment:
-      - MISP_API_KEY=${MISP_API_KEY}
-      - FEED_USER=${FEED_USER}
-      - FEED_PASSWORD=${FEED_PASSWORD}
-      - MISP_HOST=${MISP_HOST:-misp_web}
 
   score:
     build:
@@ -100,6 +86,5 @@ services:
   
 
 volumes:
-  web:
   db:
   ioc-manager:

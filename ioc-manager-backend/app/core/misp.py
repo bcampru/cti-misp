@@ -53,16 +53,27 @@ class misp_instance:
                 else:
                     e = MISPEvent()
                     if campaign in aux.keys():
-                        e.from_dict(Event=aux[campaign])
-                        [
-                            e.add_attribute(
-                                type=self.parseTypes(a[1]),
-                                value=b,
-                                comment=a[2],
-                                Tag=[tag["tag"]],
-                            )
-                            for b in a[3]
-                        ]
+                        if expiration != "null":
+                            e.from_dict(Event=aux[campaign])
+                            [
+                                e.add_attribute(
+                                    type=self.parseTypes(a[1]),
+                                    value=b,
+                                    comment=a[2],
+                                    Tag=[tag["tag"]],
+                                )
+                                for b in a[3]
+                            ]
+                        else:
+                            e.from_dict(Event=aux[campaign])
+                            [
+                                e.add_attribute(
+                                    type=self.parseTypes(a[1]),
+                                    value=b,
+                                    comment=a[2],
+                                )
+                                for b in a[3]
+                            ]
                         self.updates.append(campaign)
                     else:
                         e.from_dict(

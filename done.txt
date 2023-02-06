@@ -1,1 +1,1 @@
-[]
+[["domain", "cite4me.org"], ["domain", "focusecuador.tk"], ["domain", "milsing.hr"], ["domain", "bimnapratica.com"], ["domain", "burkert-ideenreich.de"], ["domain", "login-office365.com"], ["domain", "chavistas24.com"], ["domain", "n1.login-office365.com"], ["domain", "n2.login-office365.com"]]

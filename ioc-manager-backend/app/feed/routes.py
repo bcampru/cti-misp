@@ -27,6 +27,8 @@ def feed():
         if types == []:
             types = ["md5", "sha1", "sha256", "ip-src", "ip-dst", "domain"]
         IOCs = mispM.getIocs(types)
+        if "limit" in request.args.keys():
+            IOCs = IOCs[int("-" + request.args["limit"]) :]
         result = ""
         for a in IOCs:
             result += a["value"] + "\n"
